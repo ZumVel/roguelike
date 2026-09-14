@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d3yokddtgwy8w"]
+
+[ext_resource type="Script" uid="uid://ihvhgmr5w3pt" path="res://components/weapon_components/DamageComponent.gd" id="1_a85iw"]
+[ext_resource type="Script" uid="uid://corainugyvwia" path="res://projectile.gd" id="1_qxf0c"]
+
+[node name="Projectile" type="Area2D" unique_id=1191334961]
+script = ExtResource("1_qxf0c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=512393712]
+
+[node name="DamageComponent" type="Node" parent="." unique_id=1559624100]
+script = ExtResource("1_a85iw")
+metadata/_custom_type_script = "uid://ihvhgmr5w3pt"

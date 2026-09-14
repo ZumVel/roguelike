@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bfcs5ko0c5mw8"]
+
+[ext_resource type="PackedScene" uid="uid://c01r6p7qbkf0v" path="res://characters/simple_character/simple_character.tscn" id="1_k8bwm"]
+[ext_resource type="Texture2D" uid="uid://qgkygfco0it3" path="res://icon.svg" id="2_g3c36"]
+
+[node name="main" type="Node2D" unique_id=1427786039]
+
+[node name="SimpleCharacter" parent="." unique_id=865032912 instance=ExtResource("1_k8bwm")]
+position = Vector2(566, 335)
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1280342454]
+position = Vector2(233, 120)
+texture = ExtResource("2_g3c36")
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=1512963199]
+position = Vector2(43, 434)
+texture = ExtResource("2_g3c36")
+
+[node name="Icon3" type="Sprite2D" parent="." unique_id=107767053]
+position = Vector2(813, 548)
+texture = ExtResource("2_g3c36")
+
+[node name="Icon4" type="Sprite2D" parent="." unique_id=1350292956]
+position = Vector2(681, 134)
+texture = ExtResource("2_g3c36")

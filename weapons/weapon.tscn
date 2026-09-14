@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cespstlg1sfhc"]
+
+[ext_resource type="Script" uid="uid://c8wumf5etdyg5" path="res://weapons/weapon.gd" id="1_rma5x"]
+[ext_resource type="Script" uid="uid://ihvhgmr5w3pt" path="res://components/weapon_components/DamageComponent.gd" id="2_56jbq"]
+[ext_resource type="Script" uid="uid://cf3ac1sfl2mu1" path="res://components/weapon_components/ShootComponent.gd" id="3_aprtd"]
+[ext_resource type="PackedScene" uid="uid://d3yokddtgwy8w" path="res://projectile.tscn" id="4_ffbw6"]
+[ext_resource type="Script" uid="uid://bvobh5b52kxsk" path="res://components/weapon_components/VisualComponent.gd" id="4_fnyra"]
+[ext_resource type="Texture2D" uid="uid://qgkygfco0it3" path="res://icon.svg" id="5_aprtd"]
+[ext_resource type="PackedScene" uid="uid://qpnahx751ma8" path="res://muzzle.tscn" id="5_fnyra"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(12, 62)
+
+[node name="weapon" type="Area2D" unique_id=502975682]
+script = ExtResource("1_rma5x")
+
+[node name="DamageComponent" type="Node" parent="." unique_id=1188047172]
+script = ExtResource("2_56jbq")
+metadata/_custom_type_script = "uid://ihvhgmr5w3pt"
+
+[node name="ShootComponent" type="Node" parent="." unique_id=1924265867]
+script = ExtResource("3_aprtd")
+projectile_scene = ExtResource("4_ffbw6")
+muzzle_path = NodePath("../muzzle")
+metadata/_custom_type_script = "uid://cf3ac1sfl2mu1"
+
+[node name="VisualComponent" type="Node" parent="." unique_id=1239587017]
+script = ExtResource("4_fnyra")
+muzzle_flash = ExtResource("5_fnyra")
+metadata/_custom_type_script = "uid://bvobh5b52kxsk"
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=866051293]
+scale = Vector2(0.1, 0.5)
+texture = ExtResource("5_aprtd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1027083025]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1166968877]
+
+[node name="muzzle" parent="." unique_id=920906617 instance=ExtResource("5_fnyra")]
+position = Vector2(0, -30)

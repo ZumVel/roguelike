@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://qpnahx751ma8"]
+
+[ext_resource type="Texture2D" uid="uid://qgkygfco0it3" path="res://icon.svg" id="1_l1ekt"]
+
+[node name="muzzle" type="Sprite2D" unique_id=920906617]
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_l1ekt")

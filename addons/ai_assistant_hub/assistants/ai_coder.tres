@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AIAssistantResource" format=3 uid="uid://evk8qe5u0kbg"]
+
+[ext_resource type="Resource" uid="uid://bxv0aypqsw2hd" path="res://addons/ai_assistant_hub/llm_providers/openrouter.tres" id="1_d7b6o"]
+[ext_resource type="Script" uid="uid://q8g6m0c4lvjt" path="res://addons/ai_assistant_hub/quick_prompts/ai_quick_prompt_resource.gd" id="2_cor7a"]
+[ext_resource type="Texture2D" uid="uid://qgkygfco0it3" path="res://icon.svg" id="3_odvsl"]
+[ext_resource type="Script" uid="uid://dkiehty8nkw5g" path="res://addons/ai_assistant_hub/assistants/ai_assistant_resource.gd" id="4_ag14c"]
+
+[resource]
+script = ExtResource("4_ag14c")
+type_name = "Coder"
+type_icon = ExtResource("3_odvsl")
+llm_provider = ExtResource("1_d7b6o")
+context_length = 1024
