@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://qpnahx751ma8" path="res://muzzle.tscn" id="5_fnyra"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(64, 10)
+size = Vector2(12, 62)
 
 [node name="weapon" type="Area2D" unique_id=502975682]
 script = ExtResource("1_rma5x")
@@ -30,7 +30,7 @@ muzzle_flash = ExtResource("5_fnyra")
 metadata/_custom_type_script = "uid://bvobh5b52kxsk"
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=866051293]
-scale = Vector2(0.5, 0.1)
+scale = Vector2(0.1, 0.5)
 texture = ExtResource("5_aprtd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1027083025]
@@ -39,4 +39,4 @@ shape = SubResource("RectangleShape2D_g4v7s")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1166968877]
 
 [node name="muzzle" parent="." unique_id=920906617 instance=ExtResource("5_fnyra")]
-position = Vector2(27, 0)
+position = Vector2(0, -30)

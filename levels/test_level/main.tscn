@@ -1,164 +1,31 @@
 [gd_scene format=3 uid="uid://bfcs5ko0c5mw8"]
 
-[ext_resource type="Script" path="res://levels/test_level/main.gd" id="1_main"]
 [ext_resource type="PackedScene" uid="uid://c01r6p7qbkf0v" path="res://characters/simple_character/simple_character.tscn" id="1_k8bwm"]
-[ext_resource type="PackedScene" path="res://characters/enemy/enemy.tscn" id="2_enemy"]
-[ext_resource type="Script" path="res://levels/test_level/hud.gd" id="3_hud"]
-[ext_resource type="Script" path="res://levels/test_level/grass_background.gd" id="4_grass"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_horizontal"]
-size = Vector2(2400, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_vertical"]
-size = Vector2(32, 1800)
+[ext_resource type="Texture2D" uid="uid://qgkygfco0it3" path="res://icon.svg" id="2_g3c36"]
+[ext_resource type="PackedScene" uid="uid://mobilecontrolsui123" path="res://ui/mobile_controls_ui.tscn" id="3_mobile"]
+[ext_resource type="PackedScene" uid="uid://bonusselectionui" path="res://ui/bonus_selection_ui.tscn" id="4_bonus"]
 
 [node name="main" type="Node2D" unique_id=1427786039]
-script = ExtResource("1_main")
-enemy_scene = ExtResource("2_enemy")
-
-[node name="GrassBackground" type="Node2D" parent="."]
-position = Vector2(-634, -565)
-z_index = -10
-script = ExtResource("4_grass")
-
-[node name="TopWall" type="StaticBody2D" parent="."]
-position = Vector2(566, -181)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
-shape = SubResource("RectangleShape2D_wall_horizontal")
-
-[node name="BottomWall" type="StaticBody2D" parent="."]
-position = Vector2(566, 851)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall"]
-shape = SubResource("RectangleShape2D_wall_horizontal")
-
-[node name="LeftWall" type="StaticBody2D" parent="."]
-position = Vector2(-650, 335)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
-shape = SubResource("RectangleShape2D_wall_vertical")
-
-[node name="RightWall" type="StaticBody2D" parent="."]
-position = Vector2(1782, 335)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-shape = SubResource("RectangleShape2D_wall_vertical")
 
 [node name="SimpleCharacter" parent="." unique_id=865032912 instance=ExtResource("1_k8bwm")]
 position = Vector2(566, 335)
-groups = ["player"]
 
-[node name="Enemy" parent="." instance=ExtResource("2_enemy")]
-position = Vector2(1070, 335)
+[node name="Icon" type="Sprite2D" parent="." unique_id=1280342454]
+position = Vector2(233, 120)
+texture = ExtResource("2_g3c36")
 
-[node name="Enemy2" parent="." instance=ExtResource("2_enemy")]
-position = Vector2(566, 839)
+[node name="Icon2" type="Sprite2D" parent="." unique_id=1512963199]
+position = Vector2(43, 434)
+texture = ExtResource("2_g3c36")
 
-[node name="Enemy3" parent="." instance=ExtResource("2_enemy")]
-position = Vector2(62, 335)
+[node name="Icon3" type="Sprite2D" parent="." unique_id=107767053]
+position = Vector2(813, 548)
+texture = ExtResource("2_g3c36")
 
-[node name="Enemy4" parent="." instance=ExtResource("2_enemy")]
-position = Vector2(566, -169)
+[node name="Icon4" type="Sprite2D" parent="." unique_id=1350292956]
+position = Vector2(681, 134)
+texture = ExtResource("2_g3c36")
 
-[node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource("3_hud")
+[node name="MobileControlsUI" parent="." unique_id=2000000001 instance=ExtResource("3_mobile")]
 
-[node name="HUD" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-
-[node name="PlayerHealth" type="ProgressBar" parent="UI/HUD"]
-offset_left = 24.0
-offset_top = 24.0
-offset_right = 284.0
-offset_bottom = 48.0
-show_percentage = false
-
-[node name="ExperienceBar" type="ProgressBar" parent="UI/HUD"]
-offset_left = 24.0
-offset_top = 56.0
-offset_right = 284.0
-offset_bottom = 72.0
-show_percentage = false
-
-[node name="LevelLabel" type="Label" parent="UI/HUD"]
-offset_left = 300.0
-offset_top = 52.0
-offset_right = 430.0
-offset_bottom = 76.0
-text = "Уровень: 1"
-
-[node name="WaveLabel" type="Label" parent="UI/HUD"]
-offset_left = 24.0
-offset_top = 84.0
-offset_right = 180.0
-offset_bottom = 108.0
-text = "Волна: 1"
-
-[node name="LevelUpPanel" type="Panel" parent="UI/HUD"]
-visible = false
-offset_left = 260.0
-offset_top = 220.0
-offset_right = 872.0
-offset_bottom = 470.0
-mouse_filter = 0
-
-[node name="Title" type="Label" parent="UI/HUD/LevelUpPanel"]
-offset_left = 190.0
-offset_top = 20.0
-offset_right = 430.0
-offset_bottom = 50.0
-text = "Новый уровень"
-horizontal_alignment = 1
-
-[node name="Modifier1" type="Button" parent="UI/HUD/LevelUpPanel"]
-offset_left = 20.0
-offset_top = 85.0
-offset_right = 190.0
-offset_bottom = 180.0
-
-[node name="Modifier2" type="Button" parent="UI/HUD/LevelUpPanel"]
-offset_left = 220.0
-offset_top = 85.0
-offset_right = 390.0
-offset_bottom = 180.0
-
-[node name="Modifier3" type="Button" parent="UI/HUD/LevelUpPanel"]
-offset_left = 420.0
-offset_top = 85.0
-offset_right = 590.0
-offset_bottom = 180.0
-
-[node name="GameOverPanel" type="Panel" parent="UI/HUD"]
-visible = false
-offset_left = 360.0
-offset_top = 220.0
-offset_right = 760.0
-offset_bottom = 440.0
-mouse_filter = 0
-
-[node name="Title" type="Label" parent="UI/HUD/GameOverPanel"]
-offset_left = 100.0
-offset_top = 20.0
-offset_right = 300.0
-offset_bottom = 50.0
-text = "Игра окончена"
-horizontal_alignment = 1
-
-[node name="Stats" type="Label" parent="UI/HUD/GameOverPanel"]
-offset_left = 40.0
-offset_top = 60.0
-offset_right = 360.0
-offset_bottom = 125.0
-horizontal_alignment = 1
-
-[node name="RestartButton" type="Button" parent="UI/HUD/GameOverPanel"]
-offset_left = 125.0
-offset_top = 155.0
-offset_right = 275.0
-offset_bottom = 195.0
-text = "Начать заново"
+[node name="BonusSelectionUI" parent="." unique_id=2000000002 instance=ExtResource("4_bonus")]

@@ -1,61 +1,29 @@
-# Godot 4+ editor cache / imported binaries (regenerated locally)
-.godot/
+```
+# Godot-specific ignores
+*.import
+*.metadata
+export_presets.cfg
+.autoloads/
+.editor/
 
-# Godot translations generated from CSV
-*.translation
-
-# Godot Mono / C# (if used later)
-.mono/
-data_*/
-mono_crash.*.json
-
-# Android export template & build outputs (large, regenerable via Godot)
-android/
-*.apk
-*.aab
-*.aar
-*.apks
-
-# Game / export binaries
-*.pck
-*.exe
-*.dll
+# Build artifacts
 *.so
+*.dll
+*.exe
 *.dylib
-*.app
-*.x86_64
-*.x86
-*.wasm
-*.tmp
+*.bin
 
-# Export secrets (never commit)
-export_credentials.cfg
-**/export_credentials.cfg
+# Dependencies
+res://addons/
+*.import
 
-# Accidental nested project copies
-roguelike/
-
-# OS junk
-.DS_Store
-.DS_Store?
-._*
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-
-# Editors / IDEs
-.vs/
-.vscode/*
-!.vscode/launch.json
-!.vscode/tasks.json
+# Editor
+.vscode/
 .idea/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-*~
-
-# Logs / local notes
+*.tmp
 *.log
-git_helper.txt
+
+# System
+.DS_Store
+Thumbs.db
+```

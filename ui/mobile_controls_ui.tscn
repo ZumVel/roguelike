@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://mobilecontrolsui123"]
+
+[ext_resource type="Script" path="res://ui/MobileControlsUI.gd" id="1_mobile"]
+[ext_resource type="Script" path="res://ui/VirtualJoystick.gd" id="2_joystick"]
+
+[node name="MobileControlsUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mobile")
+
+[node name="MoveJoystickContainer" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.15, 0.15, 0.3)
+
+[node name="MoveJoystick" type="Node" parent="MoveJoystickContainer"]
+script = ExtResource("2_joystick")
+
+[node name="AimJoystickContainer" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = -150.0
+offset_right = 500.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.15, 0.15, 0.3)
+
+[node name="AimJoystick" type="Node" parent="AimJoystickContainer"]
+script = ExtResource("2_joystick")
+
+[node name="DashButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_right = 1.0
+offset_left = 550.0
+offset_top = -100.0
+offset_right = 700.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DASH"
+
+[connection signal="pressed" from="DashButton" to="." method="_on_dash_button_pressed"]

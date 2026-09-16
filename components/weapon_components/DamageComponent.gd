@@ -7,8 +7,3 @@ class_name DamageComponent
 func apply(target: Node) -> void:
 	if target.has_method("receive_damage"):
 		target.receive_damage(damage, knockback)
-		return
-
-	var health_component: Node = target.get_node_or_null("HealthComponent")
-	if health_component:
-		health_component.receive_damage(damage, knockback)

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AIAssistantResource" format=3 uid="uid://dftidkcflytp2"]
+
+[ext_resource type="Resource" uid="uid://bxv0aypqsw2hd" path="res://addons/ai_assistant_hub/llm_providers/openrouter.tres" id="1_2onn3"]
+[ext_resource type="Script" uid="uid://q8g6m0c4lvjt" path="res://addons/ai_assistant_hub/quick_prompts/ai_quick_prompt_resource.gd" id="2_us75k"]
+[ext_resource type="Script" uid="uid://dkiehty8nkw5g" path="res://addons/ai_assistant_hub/assistants/ai_assistant_resource.gd" id="3_vdhoe"]
+
+[resource]
+script = ExtResource("3_vdhoe")
+type_name = "hgj"
+ai_model = "openai/gpt-oss-120b"
+llm_provider = ExtResource("1_2onn3")

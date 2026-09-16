@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c01r6p7qbkf0v"]
+
+[ext_resource type="Script" uid="uid://qevtbmam0ves" path="res://characters/simple_character/simple_character.gd" id="1_rxbor"]
+[ext_resource type="Texture2D" uid="uid://qgkygfco0it3" path="res://icon.svg" id="2_r26hc"]
+[ext_resource type="Script" uid="uid://dkcbtfeahuf6y" path="res://components/MovementComponent.gd" id="3_eokwi"]
+[ext_resource type="Script" uid="uid://ewjfg08loil" path="res://components/InputComponent.gd" id="4_1r5hv"]
+[ext_resource type="PackedScene" uid="uid://cespstlg1sfhc" path="res://weapons/weapon.tscn" id="5_1r5hv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(130, 126)
+
+[node name="SimpleCharacter" type="CharacterBody2D" unique_id=865032912]
+script = ExtResource("1_rxbor")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=502572311]
+texture = ExtResource("2_r26hc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1232074505]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1274248880]
+
+[node name="MovementComponent" type="Node" parent="." unique_id=1660794484]
+script = ExtResource("3_eokwi")
+metadata/_custom_type_script = "uid://dkcbtfeahuf6y"
+
+[node name="InputComponent" type="Node" parent="." unique_id=366015159]
+script = ExtResource("4_1r5hv")
+metadata/_custom_type_script = "uid://ewjfg08loil"
+
+[node name="weapon" parent="." unique_id=502975682 instance=ExtResource("5_1r5hv")]
