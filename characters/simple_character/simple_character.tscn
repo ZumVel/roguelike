@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://dkcbtfeahuf6y" path="res://components/MovementComponent.gd" id="3_eokwi"]
 [ext_resource type="Script" uid="uid://ewjfg08loil" path="res://components/InputComponent.gd" id="4_1r5hv"]
 [ext_resource type="PackedScene" uid="uid://cespstlg1sfhc" path="res://weapons/weapon.tscn" id="5_1r5hv"]
+[ext_resource type="Script" uid="uid://dashcomponent1234" path="res://components/DashComponent.gd" id="6_dash"]
+[ext_resource type="Script" uid="uid://levelupcomponent" path="res://components/LevelUpComponent.gd" id="7_levelup"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(130, 126)
@@ -29,3 +31,11 @@ metadata/_custom_type_script = "uid://dkcbtfeahuf6y"
 [node name="InputComponent" type="Node2D" parent="." unique_id=1416766981]
 script = ExtResource("4_1r5hv")
 metadata/_custom_type_script = "uid://ewjfg08loil"
+
+[node name="DashComponent" type="Node" parent="." unique_id=1660794485]
+script = ExtResource("6_dash")
+metadata/_custom_type_script = "uid://dashcomponent1234"
+
+[node name="LevelUpComponent" type="Node" parent="." unique_id=1660794486]
+script = ExtResource("7_levelup")
+metadata/_custom_type_script = "uid://levelupcomponent"

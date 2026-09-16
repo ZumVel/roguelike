@@ -1,3 +1,29 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
+```
+# Godot-specific ignores
+*.import
+*.metadata
+export_presets.cfg
+.autoloads/
+.editor/
+
+# Build artifacts
+*.so
+*.dll
+*.exe
+*.dylib
+*.bin
+
+# Dependencies
+res://addons/
+*.import
+
+# Editor
+.vscode/
+.idea/
+*.tmp
+*.log
+
+# System
+.DS_Store
+Thumbs.db
+```

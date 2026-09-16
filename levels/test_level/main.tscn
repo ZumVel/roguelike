@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c01r6p7qbkf0v" path="res://characters/simple_character/simple_character.tscn" id="1_k8bwm"]
 [ext_resource type="Texture2D" uid="uid://qgkygfco0it3" path="res://icon.svg" id="2_g3c36"]
+[ext_resource type="PackedScene" uid="uid://mobilecontrolsui123" path="res://ui/mobile_controls_ui.tscn" id="3_mobile"]
+[ext_resource type="PackedScene" uid="uid://bonusselectionui" path="res://ui/bonus_selection_ui.tscn" id="4_bonus"]
 
 [node name="main" type="Node2D" unique_id=1427786039]
 
@@ -23,3 +25,7 @@ texture = ExtResource("2_g3c36")
 [node name="Icon4" type="Sprite2D" parent="." unique_id=1350292956]
 position = Vector2(681, 134)
 texture = ExtResource("2_g3c36")
+
+[node name="MobileControlsUI" parent="." unique_id=2000000001 instance=ExtResource("3_mobile")]
+
+[node name="BonusSelectionUI" parent="." unique_id=2000000002 instance=ExtResource("4_bonus")]
