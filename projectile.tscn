@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d3yokddtgwy8w"]
+
+[ext_resource type="Script" uid="uid://ihvhgmr5w3pt" path="res://components/weapon_components/DamageComponent.gd" id="1_a85iw"]
+[ext_resource type="Script" uid="uid://corainugyvwia" path="res://projectile.gd" id="1_qxf0c"]
+[ext_resource type="Texture2D" uid="uid://qgkygfco0it3" path="res://icon.svg" id="2_icon"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_proj"]
+radius = 8.0
+
+[node name="Projectile" type="Area2D"]
+collision_layer = 4
+collision_mask = 1
+monitoring = true
+monitorable = true
+script = ExtResource("1_qxf0c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_icon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_proj")
+
+[node name="DamageComponent" type="Node" parent="."]
+script = ExtResource("1_a85iw")
+metadata/_custom_type_script = "uid://ihvhgmr5w3pt"
