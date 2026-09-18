@@ -37,7 +37,8 @@ func _connect_player() -> void:
 func _show_level_up(_level: int) -> void:
 	if game_over_panel.visible:
 		return
-	current_options = modifier_options.duplicate()
+	current_options.clear()
+	current_options.assign(modifier_options)
 	current_options.shuffle()
 	for index in modifier_buttons.size():
 		modifier_buttons[index].text = current_options[index].text

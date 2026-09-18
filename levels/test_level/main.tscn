@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bfcs5ko0c5mw8"]
 
-[ext_resource type="Script" path="res://levels/test_level/main.gd" id="1_main"]
 [ext_resource type="PackedScene" uid="uid://c01r6p7qbkf0v" path="res://characters/simple_character/simple_character.tscn" id="1_k8bwm"]
+[ext_resource type="Script" uid="uid://ct46jxm40c21q" path="res://levels/test_level/main.gd" id="1_main"]
 [ext_resource type="PackedScene" path="res://characters/enemy/enemy.tscn" id="2_enemy"]
-[ext_resource type="Script" path="res://levels/test_level/hud.gd" id="3_hud"]
-[ext_resource type="Script" path="res://levels/test_level/grass_background.gd" id="4_grass"]
+[ext_resource type="Script" uid="uid://byyw332d3odap" path="res://levels/test_level/hud.gd" id="3_hud"]
+[ext_resource type="Script" uid="uid://j72i0x4xhpmp" path="res://levels/test_level/grass_background.gd" id="4_grass"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_horizontal"]
 size = Vector2(2400, 32)
@@ -16,98 +16,104 @@ size = Vector2(32, 1800)
 script = ExtResource("1_main")
 enemy_scene = ExtResource("2_enemy")
 
-[node name="GrassBackground" type="Node2D" parent="."]
-position = Vector2(-634, -565)
+[node name="GrassBackground" type="Node2D" parent="." unique_id=1298798482]
 z_index = -10
+position = Vector2(-634, -565)
 script = ExtResource("4_grass")
 
-[node name="TopWall" type="StaticBody2D" parent="."]
+[node name="TopWall" type="StaticBody2D" parent="." unique_id=163460855]
 position = Vector2(566, -181)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall" unique_id=289804867]
 shape = SubResource("RectangleShape2D_wall_horizontal")
 
-[node name="BottomWall" type="StaticBody2D" parent="."]
+[node name="BottomWall" type="StaticBody2D" parent="." unique_id=658936027]
 position = Vector2(566, 851)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall" unique_id=969254679]
 shape = SubResource("RectangleShape2D_wall_horizontal")
 
-[node name="LeftWall" type="StaticBody2D" parent="."]
+[node name="LeftWall" type="StaticBody2D" parent="." unique_id=1105450404]
 position = Vector2(-650, 335)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" unique_id=942835959]
 shape = SubResource("RectangleShape2D_wall_vertical")
 
-[node name="RightWall" type="StaticBody2D" parent="."]
+[node name="RightWall" type="StaticBody2D" parent="." unique_id=1461320760]
 position = Vector2(1782, 335)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" unique_id=596677222]
 shape = SubResource("RectangleShape2D_wall_vertical")
 
 [node name="SimpleCharacter" parent="." unique_id=865032912 instance=ExtResource("1_k8bwm")]
 position = Vector2(566, 335)
-groups = ["player"]
 
-[node name="Enemy" parent="." instance=ExtResource("2_enemy")]
+[node name="Enemy" parent="." unique_id=1758975826 instance=ExtResource("2_enemy")]
 position = Vector2(1070, 335)
 
-[node name="Enemy2" parent="." instance=ExtResource("2_enemy")]
+[node name="Enemy2" parent="." unique_id=266767961 instance=ExtResource("2_enemy")]
 position = Vector2(566, 839)
 
-[node name="Enemy3" parent="." instance=ExtResource("2_enemy")]
+[node name="Enemy3" parent="." unique_id=525549483 instance=ExtResource("2_enemy")]
 position = Vector2(62, 335)
 
-[node name="Enemy4" parent="." instance=ExtResource("2_enemy")]
+[node name="Enemy4" parent="." unique_id=430473555 instance=ExtResource("2_enemy")]
 position = Vector2(566, -169)
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1228821911]
 script = ExtResource("3_hud")
 
-[node name="HUD" type="Control" parent="UI"]
+[node name="HUD" type="Control" parent="UI" unique_id=1496804719]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
-[node name="PlayerHealth" type="ProgressBar" parent="UI/HUD"]
+[node name="PlayerHealth" type="ProgressBar" parent="UI/HUD" unique_id=391031146]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 24.0
 offset_right = 284.0
 offset_bottom = 48.0
 show_percentage = false
 
-[node name="ExperienceBar" type="ProgressBar" parent="UI/HUD"]
+[node name="ExperienceBar" type="ProgressBar" parent="UI/HUD" unique_id=1407894168]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 56.0
 offset_right = 284.0
 offset_bottom = 72.0
 show_percentage = false
 
-[node name="LevelLabel" type="Label" parent="UI/HUD"]
+[node name="LevelLabel" type="Label" parent="UI/HUD" unique_id=2076248133]
+layout_mode = 0
 offset_left = 300.0
 offset_top = 52.0
 offset_right = 430.0
 offset_bottom = 76.0
 text = "Уровень: 1"
 
-[node name="WaveLabel" type="Label" parent="UI/HUD"]
+[node name="WaveLabel" type="Label" parent="UI/HUD" unique_id=1868348036]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 84.0
 offset_right = 180.0
 offset_bottom = 108.0
 text = "Волна: 1"
 
-[node name="LevelUpPanel" type="Panel" parent="UI/HUD"]
+[node name="LevelUpPanel" type="Panel" parent="UI/HUD" unique_id=1559714084]
 visible = false
+layout_mode = 0
 offset_left = 260.0
 offset_top = 220.0
 offset_right = 872.0
 offset_bottom = 470.0
-mouse_filter = 0
 
-[node name="Title" type="Label" parent="UI/HUD/LevelUpPanel"]
+[node name="Title" type="Label" parent="UI/HUD/LevelUpPanel" unique_id=562661933]
+layout_mode = 0
 offset_left = 190.0
 offset_top = 20.0
 offset_right = 430.0
@@ -115,33 +121,37 @@ offset_bottom = 50.0
 text = "Новый уровень"
 horizontal_alignment = 1
 
-[node name="Modifier1" type="Button" parent="UI/HUD/LevelUpPanel"]
+[node name="Modifier1" type="Button" parent="UI/HUD/LevelUpPanel" unique_id=1091057388]
+layout_mode = 0
 offset_left = 20.0
 offset_top = 85.0
 offset_right = 190.0
 offset_bottom = 180.0
 
-[node name="Modifier2" type="Button" parent="UI/HUD/LevelUpPanel"]
+[node name="Modifier2" type="Button" parent="UI/HUD/LevelUpPanel" unique_id=669842503]
+layout_mode = 0
 offset_left = 220.0
 offset_top = 85.0
 offset_right = 390.0
 offset_bottom = 180.0
 
-[node name="Modifier3" type="Button" parent="UI/HUD/LevelUpPanel"]
+[node name="Modifier3" type="Button" parent="UI/HUD/LevelUpPanel" unique_id=1573006783]
+layout_mode = 0
 offset_left = 420.0
 offset_top = 85.0
 offset_right = 590.0
 offset_bottom = 180.0
 
-[node name="GameOverPanel" type="Panel" parent="UI/HUD"]
+[node name="GameOverPanel" type="Panel" parent="UI/HUD" unique_id=1270673064]
 visible = false
+layout_mode = 0
 offset_left = 360.0
 offset_top = 220.0
 offset_right = 760.0
 offset_bottom = 440.0
-mouse_filter = 0
 
-[node name="Title" type="Label" parent="UI/HUD/GameOverPanel"]
+[node name="Title" type="Label" parent="UI/HUD/GameOverPanel" unique_id=1452551676]
+layout_mode = 0
 offset_left = 100.0
 offset_top = 20.0
 offset_right = 300.0
@@ -149,14 +159,16 @@ offset_bottom = 50.0
 text = "Игра окончена"
 horizontal_alignment = 1
 
-[node name="Stats" type="Label" parent="UI/HUD/GameOverPanel"]
+[node name="Stats" type="Label" parent="UI/HUD/GameOverPanel" unique_id=1981815990]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 60.0
 offset_right = 360.0
 offset_bottom = 125.0
 horizontal_alignment = 1
 
-[node name="RestartButton" type="Button" parent="UI/HUD/GameOverPanel"]
+[node name="RestartButton" type="Button" parent="UI/HUD/GameOverPanel" unique_id=1452289653]
+layout_mode = 0
 offset_left = 125.0
 offset_top = 155.0
 offset_right = 275.0

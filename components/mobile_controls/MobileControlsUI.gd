@@ -41,7 +41,7 @@ func _ready() -> void:
 func _is_mobile_device() -> bool:
 	if OS.get_name() in ["Android", "iOS"]:
 		return true
-	if Input.has_touchscreen_ui_hint():
+	if DisplayServer.is_touchscreen_available():
 		return true
 	return false
 
@@ -185,8 +185,8 @@ func _create_ui_elements() -> void:
 	dash_button.pressed.connect(_on_dash_pressed)
 	add_child(dash_button)
 
-func _update_ui_positions() -> void:
-	var viewport_size = get_viewport_rect().size
+func _update_ui_positions() -> void: 
+	var viewport_size = get_viewport().size
 	
 	# Позиция левого джойстика (снизу слева)
 	var move_origin = mobile_input.get_move_joystick_position()

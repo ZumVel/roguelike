@@ -63,6 +63,6 @@ func is_firing() -> bool:
 func _is_mobile_device() -> bool:
 	if OS.get_name() in ["Android", "iOS"]:
 		return true
-	if Input.has_touchscreen_ui_hint():
+	if DisplayServer.is_touchscreen_available():
 		return true
 	return false

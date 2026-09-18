@@ -60,7 +60,7 @@ func _is_mobile_device() -> bool:
 	if OS.get_name() in ["Android", "iOS"]:
 		return true
 	# Также можно проверять наличие тач-ввода
-	if Input.has_touchscreen_ui_hint():
+	if DisplayServer.is_touchscreen_available():
 		return true
 	return false
 
@@ -228,5 +228,5 @@ func _draw_joystick(origin: Vector2, current: Vector2, range: float, color: Colo
 	
 	# Текущая позиция стика
 	if current != Vector2.ZERO:
-		var clamped_current = origin + (current - origin).clamped(range)
+		var clamped_current = origin + (current - origin).limit_length(range)
 		draw_circle(clamped_current, 20, color)

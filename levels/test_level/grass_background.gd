@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var world_size := Vector2(2400.0, 1800.0)
+@export var world_size := Vector2(4800.0, 3600.0)
 @export var tile_size := 32.0
 
 var noise := FastNoiseLite.new()
