@@ -8,14 +8,23 @@ signal level_up(level: int)
 @onready var movement_component: MovementComponent = $MovementComponent
 @onready var weapon: Weapon = $weapon
 @onready var health_component: Node = $HealthComponent
+var dash_component: DashComponent = null
 
 var level := 1
 var experience := 0
 
 func _ready() -> void:
 	add_to_group("player")
+	# Пытаемся найти компонент рывка
+	if has_node("DashComponent"):
+		dash_component = $DashComponent
 
 func _physics_process(delta: float) -> void:
+	# Обрабатываем рывок первым приоритетом
+	if dash_component and dash_component.is_dashing():
+		dash_component.process_dash(delta)
+		return
+	
 	movement_component.move(input_component.get_input_vector(), delta)
 	if input_component.is_firing():
 		weapon.fire(get_global_mouse_position())
