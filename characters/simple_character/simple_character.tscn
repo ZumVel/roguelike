@@ -53,7 +53,47 @@ metadata/_custom_type_script = "res://components/mobile_controls/DashComponent.g
 script = ExtResource("8_mobile_ctrl")
 metadata/_custom_type_script = "res://components/mobile_controls/MobileControlsController.gd"
 
-[node name="MobileControlsUI" type="CanvasLayer" parent="." unique_id=1660794487]
+[node name="MobileControlsUI" type="CanvasLayer" unique_id=1660794487]
 script = ExtResource("10_mobile_ui")
 metadata/_custom_type_script = "res://components/mobile_controls/MobileControlsUI.gd"
 mobile_input = NodePath("../InputComponent/MobileInputComponent")
+
+[node name="MoveJoystickBG" type="TextureRect" parent="MobileControlsUI"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+
+[node name="MoveJoystickStick" type="TextureRect" parent="MobileControlsUI/MoveJoystickBG"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+
+[node name="AimJoystickBG" type="TextureRect" parent="MobileControlsUI"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+
+[node name="AimJoystickStick" type="TextureRect" parent="MobileControlsUI/AimJoystickBG"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+
+[node name="FireButton" type="TouchScreenButton" parent="MobileControlsUI"]
+visible = false
+shape = SubResource("CircleShape2D_fire")
+passby_press = true
+action = "ui_accept"
+
+[node name="FireTexture" type="TextureRect" parent="MobileControlsUI/FireButton"]
+custom_minimum_size = Vector2(80, 80)
+
+[node name="DashButton" type="TouchScreenButton" parent="MobileControlsUI"]
+visible = false
+shape = SubResource("CircleShape2D_dash")
+passby_press = true
+action = "ui_accept"
+
+[node name="DashTexture" type="TextureRect" parent="MobileControlsUI/DashButton"]
+custom_minimum_size = Vector2(70, 70)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fire"]
+radius = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dash"]
+radius = 35.0
