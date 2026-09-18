@@ -14,6 +14,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(65, 63)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fire"]
+radius = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dash"]
+radius = 35.0
+
 [node name="SimpleCharacter" type="CharacterBody2D" unique_id=865032912]
 script = ExtResource("1_rxbor")
 
@@ -76,24 +82,18 @@ custom_minimum_size = Vector2(50, 50)
 
 [node name="FireButton" type="TouchScreenButton" parent="MobileControlsUI"]
 visible = false
-shape = SubResource("CircleShape2D_fire")
 passby_press = true
 action = "ui_accept"
+shape = SubResource("CircleShape2D_fire")
 
 [node name="FireTexture" type="TextureRect" parent="MobileControlsUI/FireButton"]
 custom_minimum_size = Vector2(80, 80)
 
 [node name="DashButton" type="TouchScreenButton" parent="MobileControlsUI"]
 visible = false
-shape = SubResource("CircleShape2D_dash")
 passby_press = true
 action = "ui_accept"
+shape = SubResource("CircleShape2D_dash")
 
 [node name="DashTexture" type="TextureRect" parent="MobileControlsUI/DashButton"]
 custom_minimum_size = Vector2(70, 70)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_fire"]
-radius = 40.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_dash"]
-radius = 35.0
