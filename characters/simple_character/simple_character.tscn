@@ -65,23 +65,18 @@ metadata/_custom_type_script = "res://components/mobile_controls/MobileControlsU
 mobile_input = NodePath("../InputComponent/MobileInputComponent")
 
 [node name="MoveJoystickBG" type="TextureRect" parent="MobileControlsUI"]
-visible = false
 custom_minimum_size = Vector2(100, 100)
 
 [node name="MoveJoystickStick" type="TextureRect" parent="MobileControlsUI/MoveJoystickBG"]
-visible = false
 custom_minimum_size = Vector2(50, 50)
 
 [node name="AimJoystickBG" type="TextureRect" parent="MobileControlsUI"]
-visible = false
 custom_minimum_size = Vector2(100, 100)
 
 [node name="AimJoystickStick" type="TextureRect" parent="MobileControlsUI/AimJoystickBG"]
-visible = false
 custom_minimum_size = Vector2(50, 50)
 
 [node name="FireButton" type="TouchScreenButton" parent="MobileControlsUI"]
-visible = false
 passby_press = true
 action = "ui_accept"
 shape = SubResource("CircleShape2D_fire")
@@ -90,7 +85,6 @@ shape = SubResource("CircleShape2D_fire")
 custom_minimum_size = Vector2(80, 80)
 
 [node name="DashButton" type="TouchScreenButton" parent="MobileControlsUI"]
-visible = false
 passby_press = true
 action = "ui_accept"
 shape = SubResource("CircleShape2D_dash")
